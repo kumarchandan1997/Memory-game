@@ -1,0 +1,91 @@
+/* Basic reset to remove default margins and paddings */
+body, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid with a minimum size of 100px per card */
+    grid-gap: 10px; /* Adjust the gap between cards here */
+    max-width: 420px; /* Set a maximum width for the grid container */
+    margin: 0 auto; /* Center the grid container */
+  }
+  
+  img {
+    width: 100%; /* Adjust the card size here */
+    height: 100%; /* Adjust the card size here */
+    cursor: pointer;
+    border-radius: 5px; /* Add rounded corners to cards */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to cards */
+  }
+  
+  /* Add any additional styling for the matched cards */
+  img[src$='white.png'] {
+    /* For example, you can add a border to matched cards */
+    border: 2px solid #42b983;
+  }
+  
+  /* Add any additional styling for the flipped cards */
+  img[src$='blank.png'] {
+    /* For example, you can add a box shadow effect to flipped cards */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background-color: #fff; /* Add a white background to the flipped cards */
+  }
+  
+  /* Customize the appearance of the "Congratulations" message */
+  #result::before {
+
+    font-weight: bold;
+    color: #42b983;
+  }
+  
+  /* Styling for the score display */
+  #result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Additional styles for the whole grid container */
+  #grid {
+    width: 100%; /* Set the width of the grid container */
+  }
+  
+  /* Custom styles for the alert messages */
+  .alert {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .alert.success {
+    background-color: #42b983;
+  }
+  
+  .alert.error {
+    background-color: #d63031;
+  }
+  
